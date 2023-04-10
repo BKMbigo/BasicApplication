@@ -10,6 +10,7 @@ object Android {
     object Plugins {
         const val ksp =
             "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:${Versions.ksp}"
+        const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
     }
 
     object Dependencies {
@@ -39,6 +40,8 @@ object Android {
         object Testing {
             const val jUnit = "junit:junit:${Versions.jUnit}"
             const val androidJUnit = "androidx.test.ext:junit-ktx:${Versions.androidJUnit}"
+            const val testRunner = "androidx.test:runner:${Versions.testRunner}"
+            const val testRules = "androidx.test:rules:${Versions.testRules}"
             const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
             const val hiltAndroidTesting =
                 "com.google.dagger:hilt-android-testing:${Versions.hiltAndroid}"

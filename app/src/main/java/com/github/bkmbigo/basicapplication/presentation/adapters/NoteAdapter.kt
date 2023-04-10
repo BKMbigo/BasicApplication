@@ -28,7 +28,7 @@ class NoteAdapter @Inject constructor() :
     class NoteViewHolder(private val binding: ItemNoteBinding) : ViewHolder(binding.root) {
         fun bind(note: NoteAdapterItem) {
             binding.tvNoteTitle.text = note.note.title
-            binding.tvNotePriority.text = note.note.priority.name
+            //binding.tvNotePriority.text = note.note.priority.name
             binding.tvNoteDescription.text = note.note.description
             binding.root.setOnClickListener {
                 note.onItemClicked(note.note)

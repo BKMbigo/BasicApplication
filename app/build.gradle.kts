@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,6 +39,10 @@ android {
     }
     buildFeatures {
         viewBinding = true
+    }
+    dataBinding {
+        enable = true
+        enableForTests = true
     }
     packagingOptions {
         pickFirst("META-INF/LICENSE.md")
@@ -86,6 +91,8 @@ dependencies {
     kaptTest(Android.Dependencies.hiltCompiler)
 
     androidTestImplementation(Android.Dependencies.Testing.androidJUnit)
+    androidTestImplementation(Android.Dependencies.Testing.testRunner)
+    androidTestImplementation(Android.Dependencies.Testing.testRules)
     androidTestImplementation(Android.Dependencies.Testing.espressoCore)
     androidTestImplementation(Android.Dependencies.Testing.roomTesting)
     androidTestImplementation(Android.Dependencies.Testing.hiltAndroidTesting)

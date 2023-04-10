@@ -13,7 +13,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.github.bkmbigo.basicapplication.R
 import com.github.bkmbigo.basicapplication.databinding.FragmentHomeBinding
-import com.github.bkmbigo.basicapplication.domain.models.Note
 import com.github.bkmbigo.basicapplication.presentation.adapters.NoteAdapter
 import com.github.bkmbigo.basicapplication.presentation.adapters.NoteAdapterItem
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,21 +54,10 @@ class HomeFragment : Fragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 homeViewModel.noteList.collect { list ->
                     val adapterList = list.map { note ->
-                        NoteAdapterItem(
-                            note,
-                            ::onNoteClicked
-                        )
+
                     }
-                    noteAdapter.submitList(adapterList)
                 }
             }
         }
-    }
-
-    private fun onNoteClicked(note: Note) {
-        findNavController().navigate(
-            R.id.action_homeFragment_to_noteEditor,
-            bundleOf(Pair("note_id", note.id))
-        )
     }
 }

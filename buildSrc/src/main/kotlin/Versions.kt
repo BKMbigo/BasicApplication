@@ -21,4 +21,6 @@ object Versions {
     const val androidJUnit = "1.1.5"
     const val espresso = "3.5.1"
     const val mockK = "1.13.3"
+    const val testRunner = "1.5.2"
+    const val testRules = "1.5.0"
 }
